@@ -3,7 +3,7 @@ Grupo 2
 Integrantes:
     Sofia Campos
     Arodi Sandobal
-    Benjamin Samagoa
+    Benjamin Samayoa
     Benjamin
     José Quiroa
  */
@@ -14,14 +14,30 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.JOptionPane;
 
-public class DD extends Applet {
+public class DD extends Applet { //Clase: DD
+    //Objeto: Disco duro
+    /*
+    Atributos:
+        Disco duro:
+            informacion de alumno:
+                notas del alumno n1,n2,n3,n4,n5
+                nombre del alumno
     
-    String tmp,nom="N/A";
+    Metodos:
+        Disco duro:
+            Ingresar informacion
+            Modificar informacion
+            Mostrar informacion
+            Eliminar informacion (en espesifico)
+            Eliminar informacion / formatear (en general)
+    */
+    
+    String tmp,nom="N/A"; //Instanciacion del atributo "nom = (Nombre del alumno)"
     int op,i,j;
     boolean c=false;
-    int[] n = new int [5];
+    int[] n = new int [5]; //Instanciacion del atributo "n[] = (notas del alumno)"
     
-    public void init() {
+    public void init() { //Funcion principal; Tipo de encapsulamiento del metodo "Public"
         do{
             tmp=JOptionPane.showInputDialog("      Menu del Disco\n\n"
                                           + "1 - Ingresar datos\n"
@@ -33,7 +49,7 @@ public class DD extends Applet {
             op=Integer.parseInt(tmp);
             switch(op){
                 case 1:
-                    in();
+                    in(); //Llamado al metodo in
                     JOptionPane.showMessageDialog(null,"El ingreso de datos a finalizado con exito\n\n");
                 break;
                 case 2:
@@ -42,19 +58,19 @@ public class DD extends Applet {
                                                          + "esta vacia.");
                     }
                     else{
-                        mo();
+                        mo(); //Llamado al metodo mo
                         JOptionPane.showMessageDialog(null,"La modificacion de datos a finalizado exitosamente\n\n");
                     }
                 break;
                 case 3:
-                    ms();
+                    ms(); //Llamado al metodo ms
                 break;
                 case 4:
-                    el();
+                    el(); //Llamado al metodo el
                     JOptionPane.showMessageDialog(null,"La eliminacion de datos a finalizado exitosamente\n\n");
                 break;
                 case 5:
-                    fo();
+                    fo(); //Llamado al metodo fo
                     JOptionPane.showMessageDialog(null,"El formateo del disco a finalizado exitosamente\n\n");
                 break;
                 case 6:
@@ -69,8 +85,8 @@ public class DD extends Applet {
         System.exit(0);
     }
     
-    public void in(){
-        nn();
+    public void in(){ //Metodo in; Tipo de encapsulamiento del metodo "Public"
+        nn(); //Llamado al metodo nn
         for (i=0;i<5;i++){
             j=i+1;
             do{
@@ -86,7 +102,7 @@ public class DD extends Applet {
         c=true;
     }
     
-    public void mo(){
+    public void mo(){ //Metodo mo; Tipo de encapsulamiento del metodo "Public"
         do{
            tmp=JOptionPane.showInputDialog("Datos para editar:\n"
                                          + "0 - Nombre:"+nom+"\n"
@@ -98,22 +114,22 @@ public class DD extends Applet {
            j=Integer.parseInt(tmp);
            switch(j){
                case 0:
-                   nn();
+                   nn(); //Llamado al sub-metodo nn
                break;
                case 1:
-                   nv(0);
+                   nv(0); //Llamado al sub-metodo nv
                break;
                case 2:
-                   nv(1);
+                   nv(1); //Llamado al sub-metodo nv
                break;
                case 3:
-                   nv(2);
+                   nv(2); //Llamado al sub-metodo nv
                break;
                case 4:
-                   nv(3);
+                   nv(3); //Llamado al sub-metodo nv
                break;
                case 5:
-                   nv(4);
+                   nv(4); //Llamado al sub-metodo nv
                break;
                default:
                    non();
@@ -122,7 +138,7 @@ public class DD extends Applet {
         }while(j<0 || j>5);
     }
     
-    public void nn(){
+    public void nn(){ //Sub-Metodo nn; Tipo de encapsulamiento del sub-metodo "Public"
         do{
             nom=JOptionPane.showInputDialog("Ingrese el nombre del alumno\n\n");
             do{
@@ -144,7 +160,7 @@ public class DD extends Applet {
         }while(j!=1);
     }
     
-    public void nv(int h){
+    public void nv(int h){ //Sub-Metodo nv; Tipo de encapsulamiento del sub-metodo "Public"
         do{
             i=h+1;
             tmp=JOptionPane.showInputDialog("Ingrese la nueva nota "+i+"");
@@ -157,7 +173,7 @@ public class DD extends Applet {
         }while(n[h]<0 || n[h]>100);
     }
     
-    public void ms(){
+    public void ms(){ //Metodo ms; Tipo de encapsulamiento del metodo "Public"
         JOptionPane.showMessageDialog(null,"Datos del alumno:\n"
                                          + "    Nombre: "+nom+"\n"
                                          + "    Nota 1: "+n[0]+"\n"
@@ -167,7 +183,7 @@ public class DD extends Applet {
                                          + "    Nota 5: "+n[4]+"\n");
     }
     
-    public void el(){
+    public void el(){ //Metodo el; Tipo de encapsulamiento del metodo "Public"
         do{
            tmp=JOptionPane.showInputDialog("Datos para eliminar:\n"
                                          + "0 - Nombre:"+nom+"\n"
@@ -203,7 +219,7 @@ public class DD extends Applet {
         }while(j<0 || j>5);
     }
     
-    public void fo(){
+    public void fo(){ //Metodo fo; Tipo de encapsulamiento del metodo "Public"
         do{
             tmp=JOptionPane.showInputDialog("¿Realmente esta seguro de que desea formatear\n"
                                           + "la informacion actual del disco?\n\n"
