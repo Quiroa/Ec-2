@@ -1,21 +1,18 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Grupo 2
+Integrantes:
+    Sofia Campos
+    Arodi Sandobal
+    Benjamin Samagoa
+    Benjamin
+    José Quiroa
  */
 package poo.pkg3;
 
-/**
- *
- * @author Jose Alejndro
- */
 public class POO3 {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        DD dd= new DD();
+        dd.init();
     }
     
 }
